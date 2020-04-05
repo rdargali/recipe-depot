@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import "./App.css";
 
 const App = () => {
-  const exampleRequest = `https://api.edamam.com/search?q=chicken&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`;
+  useEffect(() => {
+    console.log(process.env.REACT_APP_API_ID);
+  });
+
+  const getRecipes = async () => {
+    await axios
+      .get(
+        `https://api.edamam.com/search?q=chicken&app_id=${process.env.REACT_APP_API_ID}&app_key=${process.env.REACT_APP_API_KEY}`
+      )
+      .then((response) => console.log(response.data));
+  };
+
   return (
     <div className="App">
       <form className="searchForm">
