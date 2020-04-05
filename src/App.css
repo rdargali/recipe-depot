@@ -3,15 +3,50 @@
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
-.searchForm {
+.search-form {
   min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.searchBar {
+.search-bar {
   width: 50%;
   border: none;
   padding: 10px;
+}
+
+.search-button {
+  background: lightcoral;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+}
+
+.recipe-app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.recipe-container {
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgb(71, 71, 71);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: white;
+  align-items: center;
+  max-width: 40%;
+}
+
+.recipe-container ol {
+  list-style-position: inside;
+}
+
+.recipe-container ol li {
+  justify-content: left;
 }
