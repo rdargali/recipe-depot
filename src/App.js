@@ -5,13 +5,13 @@ import "./App.css";
 
 const App = () => {
   useEffect(() => {
-    console.log(process.env.REACT_APP_API_ID);
+    getRecipes();
   });
 
   const getRecipes = async () => {
     await axios
       .get(
-        `https://api.edamam.com/search?q=chicken&app_id=${process.env.REACT_APP_API_ID}&app_key=${process.env.REACT_APP_API_KEY}`
+        `https://api.edamam.com/search?q=chicken&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}`
       )
       .then((response) => console.log(response.data));
   };
