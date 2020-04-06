@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./components/Recipe";
+import Header from "./components/Header";
 import axios from "axios";
 
 import "./App.css";
@@ -8,6 +9,7 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, SetSearch] = useState("");
   const [query, setQuery] = useState("chicken");
+  const [directions, setDirections] = useState("");
 
   useEffect(() => {
     getRecipes();
@@ -31,21 +33,26 @@ const App = () => {
     setQuery(search);
 
     SetSearch("");
+    setDirections("Click on the picture for the full recipe");
   };
 
   return (
     <div className="App">
-      <form className="search-form" onSubmit={getSearch}>
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          onChange={handleSearch}
-        />
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
+      <Header directions={directions}>
+        <form className="search-form" onSubmit={getSearch}>
+          <input
+            className="search-bar"
+            type="text"
+            value={search}
+            placeholder="To start, simply enter some keywords for a recipe"
+            onChange={handleSearch}
+          />
+          <br />
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </form>
+      </Header>
       <div className="recipe-app-container">
         {recipes.map((recipe) => (
           <Recipe

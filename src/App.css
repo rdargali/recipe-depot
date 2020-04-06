@@ -8,19 +8,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 40rem;
 }
 
 .search-bar {
-  width: 50%;
+  width: 35%;
   border: none;
   padding: 10px;
+  text-align: center;
+  font-size: medium;
+  min-height: 1rem;
 }
 
 .search-button {
+  font-size: medium;
   background: lightcoral;
   border: none;
   padding: 10px 20px;
   color: white;
+  width: 7rem;
+  min-height: 1rem;
 }
 
 .recipe-app-container {
@@ -40,7 +47,8 @@
   justify-content: space-around;
   background: white;
   align-items: center;
-  max-width: 40%;
+  width: 40rem;
+  margin: 20px auto;
 }
 
 .recipe-container ol {
@@ -49,4 +57,9 @@
 
 .recipe-container ol li {
   justify-content: left;
+}
+
+.header-container {
+  text-align: center;
+  padding-top: 10px;
 }

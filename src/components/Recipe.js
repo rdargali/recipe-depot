@@ -1,4 +1,5 @@
 import React from "react";
+import FullRecipe from "./FullRecipe";
 import "../App.css";
 
 const Recipe = ({ title, calories, image, ingredients }) => {
