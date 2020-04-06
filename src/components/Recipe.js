@@ -1,18 +1,23 @@
 import React from "react";
-import FullRecipe from "./FullRecipe";
+
 import "../App.css";
 
-const Recipe = ({ title, calories, image, ingredients }) => {
+const Recipe = ({ title, calories, image, ingredients, servings, url }) => {
   return (
     <div className="recipe-container">
-      <h1>{title}</h1>
-      <p>Calories: {calories}</p>
-      <img src={image} alt={title} />
-      <ol>
-        {ingredients.map((ingredient) => (
-          <li>{ingredient.text}</li>
+      <h2>{title}</h2>
+      <strong>Servings: {servings}</strong>
+      <strong>Calories: {Math.round(calories)}</strong>
+      <strong>Number of ingredients: {ingredients.length}</strong>
+
+      <a href={url}>
+        <img src={image} alt={title} />
+      </a>
+      {/* <ul>
+        {ingredients.map((ingredient, index) => (
+          <li key={index}>{ingredient.text}</li>
         ))}
-      </ol>
+      </ul> */}
     </div>
   );
 };

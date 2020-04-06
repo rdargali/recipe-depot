@@ -8,8 +8,7 @@ import "./App.css";
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, SetSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
-  const [directions, setDirections] = useState("");
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     getRecipes();
@@ -33,18 +32,17 @@ const App = () => {
     setQuery(search);
 
     SetSearch("");
-    setDirections("Click on the picture for the full recipe");
   };
 
   return (
     <div className="App">
-      <Header directions={directions}>
+      <Header recipes={recipes} query={query}>
         <form className="search-form" onSubmit={getSearch}>
           <input
             className="search-bar"
             type="text"
             value={search}
-            placeholder="To start, simply enter some keywords for a recipe"
+            placeholder="Enter some keywords for a recipe"
             onChange={handleSearch}
           />
           <br />
@@ -56,11 +54,13 @@ const App = () => {
       <div className="recipe-app-container">
         {recipes.map((recipe) => (
           <Recipe
-            key={recipe.recipe.label}
+            key={recipe.recipe.uri}
             title={recipe.recipe.label}
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
+            servings={recipe.recipe.yield}
+            url={recipe.recipe.url}
           />
         ))}
       </div>

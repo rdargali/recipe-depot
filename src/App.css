@@ -51,15 +51,19 @@
   margin: 20px auto;
 }
 
-.recipe-container ol {
-  list-style-position: inside;
+.recipe-container ul {
+  list-style: none;
 }
 
-.recipe-container ol li {
+.recipe-container ul li {
   justify-content: left;
 }
 
 .header-container {
   text-align: center;
   padding-top: 10px;
+}
+
+img {
+  margin: 1rem;
 }
